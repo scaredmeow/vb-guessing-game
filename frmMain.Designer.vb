@@ -25,10 +25,13 @@ Partial Class frmMain
         Me.btnStart = New System.Windows.Forms.Button()
         Me.btnReset = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.pnlMainScreen = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblTime = New System.Windows.Forms.Label()
+        Me.lblMoves = New System.Windows.Forms.Label()
+        Me.lblScore = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnStart
@@ -63,57 +66,96 @@ Partial Class frmMain
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(81, 15)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(175, 30)
+        Me.Label9.Size = New System.Drawing.Size(229, 30)
         Me.Label9.TabIndex = 10
         Me.Label9.Text = "Memory Card Game"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label1
+        'pnlMainScreen
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(359, 19)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 20)
-        Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Score: "
+        Me.pnlMainScreen.Location = New System.Drawing.Point(-1, 51)
+        Me.pnlMainScreen.Name = "pnlMainScreen"
+        Me.pnlMainScreen.Size = New System.Drawing.Size(860, 480)
+        Me.pnlMainScreen.TabIndex = 14
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(493, 19)
+        Me.Label2.Location = New System.Drawing.Point(552, 14)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 20)
-        Me.Label2.TabIndex = 12
+        Me.Label2.Size = New System.Drawing.Size(139, 30)
+        Me.Label2.TabIndex = 17
         Me.Label2.Text = "Time: "
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(316, 15)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(112, 30)
+        Me.Label1.TabIndex = 18
+        Me.Label1.Text = "Score:"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(624, 19)
+        Me.Label3.Location = New System.Drawing.Point(434, 15)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(63, 20)
-        Me.Label3.TabIndex = 13
-        Me.Label3.Text = "Moves: "
+        Me.Label3.Size = New System.Drawing.Size(112, 30)
+        Me.Label3.TabIndex = 19
+        Me.Label3.Text = "Moves:"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'pnlMainScreen
+        'lblTime
         '
-        Me.pnlMainScreen.Location = New System.Drawing.Point(0, 51)
-        Me.pnlMainScreen.Name = "pnlMainScreen"
-        Me.pnlMainScreen.Size = New System.Drawing.Size(858, 479)
-        Me.pnlMainScreen.TabIndex = 14
+        Me.lblTime.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTime.Location = New System.Drawing.Point(596, 17)
+        Me.lblTime.Name = "lblTime"
+        Me.lblTime.Size = New System.Drawing.Size(95, 25)
+        Me.lblTime.TabIndex = 21
+        Me.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lblMoves
+        '
+        Me.lblMoves.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.lblMoves.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMoves.Location = New System.Drawing.Point(490, 18)
+        Me.lblMoves.Name = "lblMoves"
+        Me.lblMoves.Size = New System.Drawing.Size(56, 24)
+        Me.lblMoves.TabIndex = 22
+        Me.lblMoves.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lblScore
+        '
+        Me.lblScore.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.lblScore.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblScore.Location = New System.Drawing.Point(368, 19)
+        Me.lblScore.Name = "lblScore"
+        Me.lblScore.Size = New System.Drawing.Size(56, 23)
+        Me.lblScore.TabIndex = 23
+        Me.lblScore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(858, 530)
-        Me.Controls.Add(Me.pnlMainScreen)
+        Me.Controls.Add(Me.lblScore)
+        Me.Controls.Add(Me.lblMoves)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.pnlMainScreen)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.btnStart)
@@ -121,15 +163,17 @@ Partial Class frmMain
         Me.Name = "frmMain"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents btnStart As Button
     Friend WithEvents btnReset As Button
     Friend WithEvents Label9 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents pnlMainScreen As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents lblTime As Label
+    Friend WithEvents lblMoves As Label
+    Friend WithEvents lblScore As Label
 End Class
