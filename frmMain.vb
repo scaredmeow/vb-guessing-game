@@ -36,18 +36,26 @@ Public Class frmMain
         btnStart.Visible = False
         btnReset.Visible = True
 
-        'For i As Integer = 1 To 5
-        '    'label.Text = "Label " & i + 5
-        '    Dim label As New Label With {
-        '        .Name = "Label" & i + 5,
-        '        .Image = My.Resources.back3,
-        '        .Location = New Point(10, (i - 1) * y_size + 30),
-        '        .Size = New Point(100, y_size)
-        '    }
+        Dim x_loc, y_loc, x_size, y_size As New Integer
 
-        '    AddHandler label.Click, AddressOf Label_Click
-        '    Me.Controls.Add(label)
-        'Next
+        y_loc = 140
+        y_size = 140
+        x_size = 100
+        x_loc = x_size
+
+        For i As Integer = 0 To 7
+            'label.Text = "Label " & i + 5
+            Dim label As New Label With {
+                .Name = "Label" & i + 5,
+                .Image = My.Resources.back3,
+                .Location = New Point((x_loc + 5) * i + 10, 50),
+                .Size = New Point(x_size, y_size),
+                .Cursor = Cursors.Hand
+            }
+
+            AddHandler label.Click, AddressOf Label_Click
+            Me.Controls.Add(label)
+        Next
         'For i As Integer = 1 To 5
         '    Dim label As New Label()
         '    label.Name = "Label" & i
@@ -61,5 +69,12 @@ Public Class frmMain
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         btnStart.Visible = True
         btnReset.Visible = False
+    End Sub
+
+    Public Sub Display_On_MainScreen(frm As Form)
+        pnlMainScreen.Controls.Clear()
+        frm.TopLevel = False
+        pnlMainScreen.Controls.Add(frm)
+        frm.Show()
     End Sub
 End Class
