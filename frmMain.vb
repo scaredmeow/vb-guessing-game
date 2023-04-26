@@ -8,8 +8,6 @@ Public Class frmMain
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         timer.Interval = 1000
 
-
-
         'MsgBox(stringOfNumbers)
 
     End Sub
@@ -18,7 +16,11 @@ Public Class frmMain
         lblTime.Text = stopwatch.Elapsed.ToString("hh\:mm\:ss")
         If frmDisplay.counter = 24 Then
             timer.Stop()
-            MsgBox("Congratulations, you gain " & lblScore.Text & " points")
+            MsgBox("Congratulations, you gain " & lblScore.Text & " points in " & stopwatch.Elapsed.ToString("hh\:mm\:ss"), 0, "Congrats you Won")
+
+            stopwatch.reset()
+
+
         End If
     End Sub
 
