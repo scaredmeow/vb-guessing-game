@@ -16,6 +16,10 @@ Public Class frmMain
 
     Public Sub timer_tick(sender As Object, e As EventArgs) Handles timer.Tick
         lblTime.Text = stopwatch.Elapsed.ToString("hh\:mm\:ss")
+        If frmDisplay.counter = 24 Then
+            timer.Stop()
+            MsgBox("Congratulations, you gain " & lblScore.Text & " points")
+        End If
     End Sub
 
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click

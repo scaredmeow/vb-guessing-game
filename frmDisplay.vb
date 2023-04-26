@@ -3,7 +3,7 @@ Public Class frmDisplay
     Public lbl_dynamic As New List(Of Label)
     Public prev_val As Integer = 0
     Public next_val As Integer = 0
-    Public prev_idx, next_idx, moves, score As New Integer
+    Public prev_idx, next_idx, moves, score, counter As New Integer
     Public cards As Integer = 0
     Public final_numbers As New List(Of Integer)
     Private Sub frmDisplay_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -13,6 +13,8 @@ Public Class frmDisplay
         Dim back_card = back_cards(random.Next(back_cards.Length))
         Dim numbers As New List(Of Integer)
 
+
+        counter = 0
         moves = 0
         score = 0
         frmMain.lblMoves.Text = moves.ToString
@@ -109,6 +111,22 @@ Public Class frmDisplay
             ElseIf cards = 2 Then
                 next_val = label.Text
                 next_idx = lbl_dynamic.IndexOf(label)
+                If counter = 22 Then
+                    Select Case CInt(frmMain.lblMoves.Text)
+                        Case < 15
+                            frmMain.lblScore.Text += 100
+                        Case < 25
+                            frmMain.lblScore.Text += 50
+                        Case < 50
+                            frmMain.lblScore.Text += 25
+                        Case < 100
+                            frmMain.lblScore.Text += 10
+                        Case Else
+                            frmMain.lblScore.Text += 1
+                    End Select
+                    counter += 2
+                End If
+
             Else
                 If prev_val <> next_val Then
                     lbl_dynamic(prev_idx).Visible = True
@@ -126,6 +144,7 @@ Public Class frmDisplay
                         Case Else
                             frmMain.lblScore.Text += 1
                     End Select
+                    counter += 2
                 End If
                 prev_val = label.Text
                 prev_idx = lbl_dynamic.IndexOf(label)
